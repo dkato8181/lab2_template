@@ -12,6 +12,7 @@
   </head>
   <body>
     <!--Authentication section-->
+    {% if user.is_authenticated %}
     <div class="rightalign">
       <div class="dropdown">
         <button class="dropbtn">{{user.first_name}}</button>
@@ -20,6 +21,16 @@
         </div>
       </div>
     </div>
+    {% else %}
+    <div class="rightalign">
+      <div class="dropdown">
+        <button class="dropbtn">Visitor</button>
+        <div class="dropdown-content">
+          <a href="{% url 'onlinecourse:login' %}">Login</a>
+        </div>
+      </div>
+    </div>
+    {% endif %}
     <h2>Popular courses list</h2>
     <hr />
     {% if course_list %}
