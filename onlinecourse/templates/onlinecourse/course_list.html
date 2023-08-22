@@ -12,7 +12,14 @@
   </head>
   <body>
     <!--Authentication section-->
-
+    <div class="rightalign">
+      <div class="dropdown">
+        <button class="dropbtn">{{user.first_name}}</button>
+        <div class="dropdown-content">
+          <a href="{% url 'onlinecourse:logout' %}">Logout</a>
+        </div>
+      </div>
+    </div>
     <h2>Popular courses list</h2>
     <hr />
     {% if course_list %}

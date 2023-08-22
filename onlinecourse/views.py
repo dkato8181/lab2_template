@@ -15,7 +15,17 @@ logger = logging.getLogger(__name__)
 # Create authentication related views
 
 
+def logout_request(request):
+    # Get the user object based on session id in request
+    print("Log out the user `{}`".format(request.user.username))
+    # Logout user in the request
+    logout(request)
+    # Redirect user back to course list view
+    return redirect('onlinecourse:popular_course_list')
+
 # Add a class-based course list view
+
+
 class CourseListView(generic.ListView):
     template_name = 'onlinecourse/course_list.html'
     context_object_name = 'course_list'
