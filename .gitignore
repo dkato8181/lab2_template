@@ -2,7 +2,7 @@
 *.log
 *.pot
 *.pyc
-onlinecourse/__pycache__
+onlinecourse/__pycache__/
 db.sqlite3
 media
 
